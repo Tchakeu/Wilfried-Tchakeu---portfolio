@@ -1,0 +1,28 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <a routerLink="/home">
+        <span class="logo-text logo-full">&lt;Wilfried Tchakeu/&gt;</span>
+        <span class="logo-text logo-short">&lt;WT/&gt;</span>
+      </a>
+    </div>
+
+    <ul class="navbar-menu" [class.active]="isMobileMenuOpen">
+      <li *ngFor="let item of menuItems" class="menu-item">
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          (click)="closeMobileMenu()"
+          class="menu-link">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>

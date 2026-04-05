@@ -1,0 +1,133 @@
+<div class="container">
+  <canvas #particleCanvas class="canvas"></canvas>
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+
+  <div class="content">
+    <div class="hero">
+
+      <div class="availability-badge">
+        <span class="pulse-dot"></span>
+        <span>Disponible pour missions freelance</span>
+      </div>
+
+      <h1 class="title">
+        Développeur<br />
+        <span class="title-accent">Full Stack</span>
+      </h1>
+
+      <h2 class="subtitle">
+        <span class="typing-prefix">Spécialisé en </span>
+        <span class="typing-text">{{ displayedText }}</span>
+        <span class="cursor">|</span>
+      </h2>
+
+      <p class="description">
+        Licence en Conception et Développement d'Applications ·
+        Bachelor Administrateur DevOps <em>en cours</em>
+      </p>
+
+      <!-- Stats — sans nombre de technos fixe -->
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">ans d'exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">8+</span>
+          <span class="stat-label">projets livrés</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">certif. en cours</span>
+        </div>
+      </div>
+
+      <!-- Stack favori avec logos CDN -->
+      <div class="fav-stack">
+        <span class="fav-label">Stack de prédilection</span>
+        <div class="fav-logos">
+          <div class="fav-tech" title="Angular">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
+            <span>Angular</span>
+          </div>
+          <div class="fav-tech" title="Spring Boot">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" />
+            <span>Spring Boot</span>
+          </div>
+          <div class="fav-tech" title="PostgreSQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+            <span>PostgreSQL</span>
+          </div>
+          <div class="fav-tech" title="Docker">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+            <span>Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills tags -->
+      <div class="skills">
+        <span class="skill" *ngFor="let skill of skills">{{ skill }}</span>
+      </div>
+
+      <div class="cta">
+        <button class="primary-btn" (click)="scrollToProjects()">
+          <span>Voir mes projets</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="secondary-btn" (click)="scrollToContact()">
+          Me contacter
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Image de profil -->
+    <div class="profile-image-container">
+      <div class="image-frame">
+        <img
+          src="assets/img/me.png"
+          alt="Portrait de Wilfried Tchakeu"
+          class="profile-image"
+        />
+        <div class="image-overlay"></div>
+      </div>
+
+      <div class="floating-card card-exp">
+        <div class="card-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+        </div>
+        <div>
+          <p class="card-title">Expérience</p>
+          <p class="card-value">Full Stack Dev</p>
+        </div>
+      </div>
+
+      <div class="floating-card card-stack">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="card-tech-icon" />
+        <div>
+          <p class="card-title">Tech favorite</p>
+          <p class="card-value">Angular · Spring</p>
+        </div>
+      </div>
+
+      <div class="accent-lines">
+        <div class="accent-line line1"></div>
+        <div class="accent-line line2"></div>
+        <div class="accent-line line3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="mouse"><div class="wheel"></div></div>
+    <p class="scroll-text">Scroll</p>
+  </div>
+</div>
