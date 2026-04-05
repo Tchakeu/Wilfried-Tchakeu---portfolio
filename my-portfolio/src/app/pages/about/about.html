@@ -1,0 +1,134 @@
+<div class="about-container">
+  <section class="about-header">
+    <h1 class="page-title">À Propos</h1>
+    <p class="page-subtitle">Du code propre à l'infrastructure scalable — je construis l'avenir du web</p>
+  </section>
+
+  <div class="about-content">
+
+    <!-- Introduction -->
+    <section class="intro-section">
+      <div class="intro-card">
+        <div class="profile-image">
+          <!-- Remplace par ta vraie photo ! -->
+          <img src="assets/img/me.png" alt="Ma photo" class="profile-photo" />
+           <canvas #codeBg class="code-bg " style="display: none;"></canvas>
+        </div>
+        <div class="intro-text">
+          <h2 class="intro-title">Salut, je suis Wilfried Tchakeu !</h2>
+          <p class="intro-description">
+            Développeur Full Stack en voie de devenir <strong>Administrateur DevOps certifié</strong>,
+            je conçois des applications performantes et les déploie dans des environnements automatisés, sécurisés et scalables.
+          </p>
+          <p class="intro-description">
+            De l'idée au déploiement en production, j'adore tout le cycle : coder avec passion, automatiser sans compromis,
+            et optimiser pour que ça tourne comme une horloge suisse — même à 3h du matin.
+          </p>
+          <p class="highlight-quote">
+            "Le bon code sans bonne infrastructure meurt. La bonne infrastructure sans bon code ne sert à rien.
+            Moi, je fais les deux."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <h3 class="stat-value">{{ stat.value }}</h3>
+          <p class="stat-label">{{ stat.label }}</p>
+        </div>
+      </div>
+    </section>
+
+<!-- ==================== PARCOURS (nouvelle timeline propre et moderne) ==================== -->
+<section class="timeline-section">
+  <h2 class="section-title">Mon Parcours</h2>
+
+  <div class="timeline-modern">
+    <!-- Ligne centrale -->
+    <div class="timeline-line"></div>
+
+    <div class="timeline-entry"
+         *ngFor="let item of timeline; let i = index"
+         [class.right]="i % 2 === 1">
+
+      <div class="timeline-marker"></div>
+
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <span class="timeline-year">{{ item.year }}</span>
+          <span class="timeline-type"
+                [class.education]="item.type === 'education'">
+            {{ item.type === 'education' ? 'Formation' : 'Expérience' }}
+          </span>
+        </div>
+        <h3 class="timeline-title">{{ item.title }}</h3>
+        <p class="timeline-description">{{ item.description }}</p>
+
+        <div class="timeline-skills" *ngIf="item.skills">
+          <span class="skill-tag" *ngFor="let skill of item.skills">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMPÉTENCES & VALEURS (remplace "Ce qui me fait vibrer") ==================== -->
+    <!-- CE QUE J'APPORT CORRIGÉ (avec vraies icônes SVG cette fois) -->
+    <section class="strengths-section">
+      <h2 class="section-title">Ce que j'apporte</h2>
+
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6" fill="currentColor"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <h3>End-to-End</h3>
+          <p>Je livre du code fonctionnel jusqu'au déploiement en production avec monitoring inclus.</p>
+        </div>
+
+        <div class="strength-card">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          <h3>Automatisation native</h3>
+          <p>Docker, CI/CD, IaC (Terraform), GitOps : tout est scripté dès le premier jour.</p>
+        </div>
+
+        <div class="strength-card">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <h3>Scalabilité & fiabilité</h3>
+          <p>J'anticipe la croissance : microservices, Kubernetes, observabilité intégrée.</p>
+        </div>
+
+        <div class="strength-card">
+          <svg class="strength-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+          <h3>Curiosité technique</h3>
+          <p>Veille quotidienne, certifications en cours, contributions open-source.</p>
+        </div>
+      </div>
+    </section>
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2 class="cta-title">On travaille ensemble ?</h2>
+      <p class="cta-description">Stage, alternance, CDI, mission freelance — je suis prêt à rejoindre votre aventure !</p>
+      <a routerLink="/contact" class="cta-btn">Discutons de votre projet</a>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="skills-container">
+  <section class="skills-header">
+    <h1 class="page-title">Compétences <span>Techniques</span></h1>
+    <p class="page-subtitle">
+      Mon expertise en développement Full Stack et administration DevOps
+    </p>
+  </section>
+
+  <div class="skills-content">
+    <div class="category" *ngFor="let category of skillCategories; let i = index">
+      <h2 class="category-title">{{ category.title }}</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of category.skills">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <img [src]="skill.icon" [alt]="skill.name" *ngIf="skill.icon.startsWith('http') || skill.icon.startsWith('assets')" />
+              <!-- Fallback si pas d'image -->
+              <svg *ngIf="!skill.icon.startsWith('http') && !skill.icon.startsWith('assets')" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{ skill.name }}</h3>
+              <span class="skill-level-text">{{ getSkillLevelText(skill.level) }}</span>
+            </div>
+            <span class="skill-percentage">{{ skill.level }}%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div
+              class="skill-progress"
+              [attr.data-level]="skill.level"
+              [style.animation-delay]="(i * 0.1) + 's'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <section class="certifications">
+    <h2 class="section-title">Formation & Diplômes</h2>
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Bachelor Administrateur DevOps</h3>
+          <p>En cours — 2025 / 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Licence Conception & Développement d'Applications</h3>
+          <p>Obtenue — 2025</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
